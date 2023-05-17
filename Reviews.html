@@ -1,0 +1,328 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" >
+    <title>RCC | Retail Camping Company</title>
+    <link rel="icon" type="image/x-icon" href="img/icon.png">
+    <link rel="stylesheet" href="StyleSheet.css">
+    <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/8f27d68390.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <!-- nav bar -->
+        <nav>
+            <ul>
+                <li><a href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Home &nbsp; &nbsp; </a></li>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Products
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="Furniture.html">Furniture</a>
+                        <a href="Camping Equipment.html">Camping Equipment</a>
+                        <a href="Offers and Packages.html">Offers and Packages</a>
+                    </div>
+                </div>
+                <li><a href="Reviews.html">Reviews</a></li>
+                <li2><input type="search" name="search" placeholder="Search.."></li2>
+                <li2><a href="index.html">RCC | Retail Camping Company</a></li2>
+                <li3>
+                    <div class="cart-box"></div>
+                    <div class="cart-icon">
+                        <i class="fas fa-cart-arrow-down fa-2x"></i>
+                    </div>
+                    <div class="whole-cart-window hide">
+                        <div class="cart-wrapper"></div>
+                        <div class="subtotal">Subtotal: $0.00</div>
+                        <div class="Checkout">
+                            <button><a href="Basket.html">Checkout</a></button>
+                        </div>
+
+                    </div>
+                </li3>
+            </ul>
+
+        </nav>
+    </header>
+    <!--form-->
+    <div class="container">
+        <form action="/action_page.php">
+            <div class="row">
+                <div class="col-1">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="hm" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="lname">Last Name</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="mh" name="lastname" placeholder="Your last name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1">
+                    <label for="Email">Email</label>
+                </div>
+                <div class="col-2">
+                    <input type="text" id="Email" name="Email" placeholder="Your Email..">
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label for="Comment">Leave a Comment</label>
+                    </div>
+                    <div class="col-2">
+                        <textarea id="Comment" name="Comment" placeholder="Write something.."
+                            style="height:100px"></textarea>
+                    </div>
+                    <div id="stars">
+                        <span class="star" onclick="setRating(1)">&#9733;</span>
+                        <span class="star" onclick="setRating(2)">&#9733;</span>
+                        <span class="star" onclick="setRating(3)">&#9733;</span>
+                        <span class="star" onclick="setRating(4)">&#9733;</span>
+                        <span class="star" onclick="setRating(5)">&#9733;</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <input type="submit" value="Leave Review">
+                </div>
+            </div>
+        </form>
+    </div>
+    <hr style="border:3px solid #E6E5A3">
+    <!--past reviews-->
+    <main>
+        <div>
+            <div class="reviews">
+                <div class="card">
+                    <div class="card-head">
+                        <img src="img/pic.jpeg" alt="photo">
+                        <div class="card-name">
+                            <h4>Ahmad</h4>
+                        </div>
+                        <div class="stars1">
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i3 class="fa fa-star"></i3>
+                            <i3 class="fa fa-star"></i3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            &nbsp; &nbsp; &nbsp;Some of the highest quality camping gear I have ever used.
+                            <br>&nbsp; &nbsp; &nbsp;Their quality is unmatched and their prices are reasonable.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="card">
+                    <div class="card-head">
+                        <img src="img/pic.jpeg" alt="photo">
+                        <div class="card-name">
+                            <h4>Aya</h4>
+                        </div>
+                        <div class="stars1">
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i3 class="fa fa-star"></i3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            &nbsp; &nbsp; &nbsp; I purchased a camping chair it was a game-changer.
+                            <br>&nbsp; &nbsp; &nbsp; It was lightweight and easy to pack, but also it was a little
+                            uncomfortable.
+                            <br>&nbsp; &nbsp; &nbsp; I recommend it for your next camping trip!
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head pb-0">
+                        <img src="img/pic.jpeg" alt="photo">
+                        <div class="card-name">
+                            <h4>Hana</h4>
+                        </div>
+                        <div class="stars1">
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i3 class="fa fa-star"></i3>
+                            <i3 class="fa fa-star"></i3>
+                            <i3 class="fa fa-star"></i3>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            &nbsp; &nbsp; &nbsp; I recently purchased a camping tent it was not perfect for my trip.
+                            <br>&nbsp; &nbsp; &nbsp; It was not easy to set up and take down,
+                            <br>&nbsp; &nbsp; &nbsp; but it kept me dry during a rainy night.
+                        </p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-head">
+                        <img src="img/pic.jpeg" alt="photo">
+                        <div class="card-name">
+                            <h4>Hanen</h4>
+                        </div>
+                        <div class="stars1">
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                            <i2 class="fa fa-star"></i2>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            &nbsp; &nbsp; &nbsp;I recently purchased a camping stove it worked perfectly.
+                            <br>&nbsp; &nbsp; &nbsp;It was easy to set up and use, and it cooked food quickly and
+                            evenly.
+                            <br>&nbsp; &nbsp; &nbsp;Highly recommend for your next camping trip.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--user rating-->
+    <div class="total-rating">
+        <span class="heading">User Rating</span>
+        <div class="stars1">
+            <i2 class="fa fa-star"></i2>
+            <i2 class="fa fa-star"></i2>
+            <i2 class="fa fa-star"></i2>
+            <i2 class="fa fa-star"></i2>
+            <i3 class="fa fa-star"></i3>
+        </div>
+        <p>4.2 average based on 360 reviews.</p>
+        <hr style="border:3px solid #E6E5A3">
+
+        <div class="row">
+            <div class="side">
+                <div>5 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar">
+                    <div class="bar-5"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>216</div>
+            </div>
+            <div class="side">
+                <div>4 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar">
+                    <div class="bar-4"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>72</div>
+            </div>
+            <div class="side">
+                <div>3 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar">
+                    <div class="bar-3"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>36</div>
+            </div>
+            <div class="side">
+                <div>2 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar">
+                    <div class="bar-2"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>15</div>
+            </div>
+            <div class="side">
+                <div>1 star</div>
+            </div>
+            <div class="middle">
+                <div class="bar">
+                    <div class="bar-1"></div>
+                </div>
+            </div>
+            <div class="side right">
+                <div>21</div>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+    <footer class="End-footer">
+
+        <div class="footer-left">
+            <h3>R<span>C</span>C Retail <span>Camping</span>Company</h3>
+
+            <p class="footer-links">
+                <a href="Home Page.html">Home</a>
+                |
+                <a href="Furniture.html">Furniture</a>
+                |
+                <a href="Camping Equipment.html">Camping Equipment</a>
+                |
+                <a href="Offers and Packages.html">Offers and Packages</a>
+                |
+                <a href="Reviews.html">Reviews</a>
+            </p>
+            <p class="footer-company-name">Copyright © 2023 <strong>RCC</strong> All rights reserved</p>
+            <div class="footer-icons">
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+                <a href="https://instagram.com/d9_h1?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a>
+                <a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>UAE</span>
+                    Dubai</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>800101</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="hanenabs14@gmail.com">infoRCC@gmail.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About RCC</span>
+                <strong>RCC</strong> is a Retail Camping Company where can make the most of your outdoor experiences,
+                we offer a comprehensive selection of camping gear and supplies.
+            </p>
+            <!--map plug-ins-->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.6509516108!2d55.50767976320164!3d25.07575945545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2z2K_YqNmK!5e0!3m2!1sar!2sae!4v1683680750687!5m2!1sar!2sae"
+                width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+    </footer>
+</body>
+
+</html>
