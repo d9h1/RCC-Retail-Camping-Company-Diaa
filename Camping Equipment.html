@@ -1,0 +1,358 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <title>RCC | Retail Camping Company</title>
+  <link rel="icon" type="image/x-icon" href="img/icon.png">
+  <link rel="stylesheet" href="StyleSheet.css">
+  <link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/8f27d68390.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <header>
+    <!-- nav bar -->
+    <nav>
+      <ul>
+        <li><a href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Home &nbsp; &nbsp; </a></li>
+        <div class="dropdown">
+          <button class="dropbtn">
+            Products
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="Furniture.html">Furniture</a>
+            <a href="Camping Equipment.html">Camping Equipment</a>
+            <a href="Offers and Packages.html">Offers and Packages</a>
+          </div>
+        </div>
+        <li><a href="Reviews.html">Reviews</a></li>
+        <li2><input type="search" name="search" placeholder="Search.."></li2>
+        <li2><a href="index.html">RCC | Retail Camping Company</a></li2>
+        <li3>
+          <div class="cart-box"></div>
+          <div class="cart-icon">
+            <i class="fas fa-cart-arrow-down fa-2x"></i>
+          </div>
+          <div class="whole-cart-window hide">
+            <div class="cart-wrapper"></div>
+            <div class="subtotal">Subtotal: $0.00</div>
+            <div class="Checkout">
+              <button><a href="info.html">Checkout</a></button>
+            </div>
+
+          </div>
+          </div>
+          </div>
+        </li3>
+      </ul>
+
+    </nav>
+  </header>
+  <!--video plug-ins-->
+  <video src="video/v1.mp4" width="100%" height="500" controls></video>
+  <hr style="border:3px solid #E6E5A3">
+  <section class="shop-section">
+    <div class="card-wrapper">
+      <!-- product 1 -->
+      <div data-id="1" class="card-item">
+        <img src="img/E.webp" alt="product">
+        <div class="details">
+          <h3>Bottle</h3>
+          <p>
+            <span class="price">Price: $5</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+      <!-- product 2 -->
+      <div data-id="2" class="card-item">
+        <img src="img/E1.webp" alt="product">
+        <div class="details">
+          <h3>Gas</h3>
+          <p>
+            <span class="price">Price: $20</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- product 3 -->
+      <div data-id="3" class="card-item">
+        <img src="img/E2.webp" alt="product">
+        <div class="details">
+          <h3>Gas</h3>
+          <p>
+            <span class="price">Price: $25</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- product 4 -->
+      <div data-id="4" class="card-item">
+        <img src="img/E3.webp" alt="product">
+        <div class="details">
+          <h3>Cup</h3>
+          <p>
+            <span class="price">Price: $5</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+      <!-- product 5 -->
+      <div data-id="5" class="card-item">
+        <img src="img/E5.webp" alt="product">
+        <div class="details">
+          <h3>Gas</h3>
+          <p>
+            <span class="price">Price: $25</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- product 6 -->
+      <div data-id="6" class="card-item">
+        <img src="img/E6.webp" alt="product">
+        <div class="details">
+          <h3>Electric grill</h3>
+          <p>
+            <span class="price">Price: $40</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+      <!-- product 7 -->
+      <div data-id="5" class="card-item">
+        <img src="img/E7.webp" alt="product">
+        <div class="details">
+          <h3>Bottle</h3>
+          <p>
+            <span class="price">Price: $7</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- product 8 -->
+      <div data-id="6" class="card-item">
+        <img src="img/E8.webp" alt="product">
+        <div class="details">
+          <h3>Bottle</h3>
+          <p>
+            <span class="price">Price: $5</span>
+            <span class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Add To Cart</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>class CartItem {
+      constructor(name, desc, img, price) {
+        this.name = name
+        this.desc = desc
+        this.img = img
+        this.price = price
+        this.quantity = 1
+      }
+    }
+
+    class LocalCart {
+      static key = "cartItems"
+
+      static getLocalCartItems() {
+        let cartMap = new Map()
+        const cart = localStorage.getItem(LocalCart.key)
+        if (cart === null || cart.length === 0) return cartMap
+        return new Map(Object.entries(JSON.parse(cart)))
+      }
+
+      static addItemToLocalCart(id, item) {
+        let cart = LocalCart.getLocalCartItems()
+        if (cart.has(id)) {
+          let mapItem = cart.get(id)
+          mapItem.quantity += 1
+          cart.set(id, mapItem)
+        }
+        else
+          cart.set(id, item)
+        localStorage.setItem(LocalCart.key, JSON.stringify(Object.fromEntries(cart)))
+        updateCartUI()
+
+      }
+
+      static removeItemFromCart(id) {
+        let cart = LocalCart.getLocalCartItems()
+        if (cart.has(id)) {
+          let mapItem = cart.get(id)
+          if (mapItem.quantity > 1) {
+            mapItem.quantity -= 1
+            cart.set(id, mapItem)
+          }
+          else
+            cart.delete(id)
+        }
+        if (cart.length === 0)
+          localStorage.clear()
+        else
+          localStorage.setItem(LocalCart.key, JSON.stringify(Object.fromEntries(cart)))
+        updateCartUI()
+      }
+    }
+
+
+    const cartIcon = document.querySelector('.fa-cart-arrow-down')
+    const wholeCartWindow = document.querySelector('.whole-cart-window')
+    wholeCartWindow.inWindow = 0
+    const addToCartBtns = document.querySelectorAll('.add-to-cart-btn')
+    addToCartBtns.forEach((btn) => {
+      btn.addEventListener('click', addItemFunction)
+    })
+
+    function addItemFunction(e) {
+      const id = e.target.parentElement.parentElement.parentElement.getAttribute("data-id")
+      const img = e.target.parentElement.parentElement.previousElementSibling.src
+      const name = e.target.parentElement.previousElementSibling.textContent
+      const desc = e.target.parentElement.children[0].textContent
+      let price = e.target.parentElement.children[1].textContent
+      price = price.replace("Price: $", '')
+      const item = new CartItem(name, desc, img, price)
+      LocalCart.addItemToLocalCart(id, item)
+      console.log(price)
+    }
+
+
+    cartIcon.addEventListener('mouseover', () => {
+      if (wholeCartWindow.classList.contains('hide'))
+        wholeCartWindow.classList.remove('hide')
+    })
+
+    cartIcon.addEventListener('mouseleave', () => {
+      // if(wholeCartWindow.classList.contains('hide'))
+      setTimeout(() => {
+        if (wholeCartWindow.inWindow === 0) {
+          wholeCartWindow.classList.add('hide')
+        }
+      }, 500)
+
+    })
+
+    wholeCartWindow.addEventListener('mouseover', () => {
+      wholeCartWindow.inWindow = 1
+    })
+
+    wholeCartWindow.addEventListener('mouseleave', () => {
+      wholeCartWindow.inWindow = 0
+      wholeCartWindow.classList.add('hide')
+    })
+
+
+    function updateCartUI() {
+      const cartWrapper = document.querySelector('.cart-wrapper')
+      cartWrapper.innerHTML = ""
+      const items = LocalCart.getLocalCartItems()
+      if (items === null) return
+      let count = 0
+      let total = 0
+      for (const [key, value] of items.entries()) {
+        const cartItem = document.createElement('div')
+        cartItem.classList.add('cart-item')
+        let price = value.price * value.quantity
+        price = Math.round(price * 100) / 100
+        count += 1
+        total += price
+        total = Math.round(total * 100) / 100
+        cartItem.innerHTML =
+          `
+          <img src="${value.img}"> 
+                         <div class="details">
+                             <h3>${value.name}</h3>
+                             <p>${value.desc}
+                              <span class="quantity">Quantity: ${value.quantity}</span>
+                                 <span class="price">Price: $ ${price}</span>
+                             </p>
+                         </div>
+                         <div class="cancel"><i class="fas fa-window-close"></i></div>
+          `
+        cartItem.lastElementChild.addEventListener('click', () => {
+          LocalCart.removeItemFromCart(key)
+        })
+        cartWrapper.append(cartItem)
+      }
+
+      if (count > 0) {
+        cartIcon.classList.add('non-empty')
+        let root = document.querySelector(':root')
+        root.style.setProperty('--after-content', `"${count}"`)
+        const subtotal = document.querySelector('.subtotal')
+        subtotal.innerHTML = `SubTotal: $${total}`
+      }
+      else
+        cartIcon.classList.remove('non-empty')
+    }
+    document.addEventListener('DOMContentLoaded', () => { updateCartUI() })
+  </script>
+  <!--footer-->
+  <footer class="End-footer">
+
+    <div class="footer-left">
+      <h3>R<span>C</span>C Retail <span>Camping</span>Company</h3>
+
+      <p class="footer-links">
+        <a href="Home Page.html">Home</a>
+        |
+        <a href="Furniture.html">Furniture</a>
+        |
+        <a href="Camping Equipment.html">Camping Equipment</a>
+        |
+        <a href="Offers and Packages.html">Offers and Packages</a>
+        |
+        <a href="Reviews.html">Reviews</a>
+      </p>
+      <p class="footer-company-name">Copyright © 2023 <strong>RCC</strong> All rights reserved</p>
+      <div class="footer-icons">
+        <a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a href="https://instagram.com/d9_h1?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a>
+        <a href="https://web.whatsapp.com/"><i class="fa fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-center">
+      <div>
+        <i class="fa fa-map-marker"></i>
+        <p><span>UAE</span>
+          Dubai</p>
+      </div>
+
+      <div>
+        <i class="fa fa-phone"></i>
+        <p>800101</p>
+      </div>
+      <div>
+        <i class="fa fa-envelope"></i>
+        <p><a href="hanenabs14@gmail.com">infoRCC@gmail.com</a></p>
+      </div>
+    </div>
+    <div class="footer-right">
+      <p class="footer-company-about">
+        <span>About RCC</span>
+        <strong>RCC</strong> is a Retail Camping Company where can make the most of your outdoor experiences,
+        we offer a comprehensive selection of camping gear and supplies.
+      </p>
+      <!--map plug-ins-->
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462562.6509516108!2d55.50767976320164!3d25.07575945545691!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f43496ad9c645%3A0xbde66e5084295162!2z2K_YqNmK!5e0!3m2!1sar!2sae!4v1683680750687!5m2!1sar!2sae"
+        width="200" height="100" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+  </footer>
+</body>
+
+</html>
